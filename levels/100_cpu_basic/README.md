@@ -14,7 +14,7 @@ The way we are working out the average (mean) CPU usage over a 60 second duratio
 ```
 cpuacct_usage_diff_in_ns = (cpuacct_usage_curr_in_ns - cpuacct_usage_prev_in_ns) 
 max_allowed_cpu_time_in_us = num_periods_elapsed * cpu_cfs_quota_in_us 
-cpu_usage_percentage = (cpuacct_usage_diff_in_ns / (max_allowed_cpu_time_in_us * 1000)) * 100 
+cpu_usage_percentage = 100.0 * (float(cpuacct_usage_diff_in_ns) / (float(max_allowed_cpu_time_in_us) * 1000.0))
 ```
 
 ## How to check your work
